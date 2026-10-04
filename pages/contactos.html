@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos — Ervanária Hanhane</title>
+  <meta name="description" content="Fala connosco pelo WhatsApp ou Instagram.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="container">
+     <a href="../index.html" class="marca">
+  <img src="../images/logo/logo-real.jpg" alt="Ervanária Hanhane" style="height:40px;">
+  <span class="marca-nome">Ervanária Hanhane</span>
+</a>
+
+      <nav class="nav-principal" id="navPrincipal">
+        <a href="../index.html">Início</a>
+        <a href="produtos.html">Suplementos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CABEÇALHO DE PÁGINA -->
+  <section class="cabecalho-pagina">
+    <div class="container">
+      <h1>Fala connosco</h1>
+      <p>A forma mais rápida de tirar dúvidas ou encomendar é pelo WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- CARTÕES DE CONTACTO -->
+  <section class="container grade-contacto">
+    <div class="cartao-contacto">
+      <h3>WhatsApp</h3>
+      <p>Fala diretamente connosco para tirar dúvidas ou fazer a tua encomenda.</p>
+      <a class="botao botao-primario" id="botaoWhatsappContacto" target="_blank" rel="noopener" href="#">
+        Abrir conversa no WhatsApp
+      </a>
+    </div>
+
+    <div class="cartao-contacto">
+      <h3>Instagram</h3>
+      <p>Segue a Ervanária Hanhane para novidades, dicas e os nossos vídeos sobre os suplementos.</p>
+      <a class="botao botao-secundario" id="botaoInstagramContacto" target="_blank" rel="noopener" href="#">
+        Ver o nosso Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Ervanária Hanhane</h3>
+        <p>Suplementos naturais com origem e composição verificadas, para toda a família.</p>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <p><a href="produtos.html">Suplementos</a></p>
+        <p><a href="sobre.html">Sobre Nós</a></p>
+        <p><a href="contactos.html">Contactos</a></p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><a href="#" id="linkInstagram">Instagram</a></p>
+        <p><a href="#" id="linkWhatsapp">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="rodape-baixo">
+      &copy; <span id="anoAtual"></span> Ervanária Hanhane. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/produtos.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("botaoWhatsappContacto").href = linkWhatsapp();
+      document.getElementById("botaoInstagramContacto").href = CONFIG.instagram;
+    });
+  </script>
+</body>
+</html>

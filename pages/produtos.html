@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suplementos — Ervanária Hanhane</title>
+  <meta name="description" content="Todos os suplementos naturais da Ervanária Hanhane, organizados por categoria.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="container">
+      <a href="../index.html" class="marca">
+        <img src="../images/logo/logo-real.jpg" alt="Ervanária Hanhane" style="height:40px;">
+        <span class="marca-nome">Ervanária Hanhane</span>
+      </a>
+
+      <nav class="nav-principal" id="navPrincipal">
+        <a href="../index.html">Início</a>
+        <a href="produtos.html">Suplementos</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="contactos.html">Contactos</a>
+      </nav>
+
+      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- CABEÇALHO DE PÁGINA -->
+  <section class="cabecalho-pagina">
+    <div class="container">
+      <h1>Os nossos suplementos</h1>
+      <p>Explora por categoria ou vê tudo o que a Ervanária Hanhane tem para oferecer.</p>
+    </div>
+  </section>
+
+  <!-- FILTROS + GRELHA -->
+  <section class="seccao-lista-produtos">
+    <div class="container">
+      <div class="categorias-lista" id="listaFiltros">
+        <!-- preenchido via JavaScript (pagina-produtos.js) -->
+      </div>
+
+      <div class="grade-produtos" id="grelhaProdutos" style="margin-top: var(--espaco-md);">
+        <!-- preenchido via JavaScript (pagina-produtos.js) -->
+      </div>
+
+      <p class="resultado-vazio" id="resultadoVazio" style="display:none;">
+        Ainda não há suplementos nesta categoria. Volta em breve!
+      </p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="rodape">
+    <div class="container">
+      <div>
+        <h3>Ervanária Hanhane</h3>
+        <p>Suplementos naturais com origem e composição verificadas, para toda a família.</p>
+      </div>
+      <div>
+        <h3>Navegação</h3>
+        <p><a href="produtos.html">Suplementos</a></p>
+        <p><a href="sobre.html">Sobre Nós</a></p>
+        <p><a href="contactos.html">Contactos</a></p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><a href="#" id="linkInstagram">Instagram</a></p>
+        <p><a href="#" id="linkWhatsapp">WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="rodape-baixo">
+      &copy; <span id="anoAtual"></span> Ervanária Hanhane. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- MODAL DE DETALHES DO PRODUTO -->
+  <div class="modal-fundo" id="modalFundo">
+    <div class="modal-caixa">
+      <button class="modal-fechar" id="modalFechar" aria-label="Fechar">&times;</button>
+      <div id="modalCorpo"><!-- preenchido via JavaScript --></div>
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/produtos.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/pagina-produtos.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+/* =========================================================
+   ERVANÁRIA HANHANE — style.css
+   Identidade: VERDE + BRANCO, forte e limpo.
+   - Verde vibrante como cor de marca (confiança, natureza, saúde)
+   - Branco puro como respiração / destaque dos produtos
+   - Serif com carácter nos títulos, sans-serif limpa no corpo
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Verdes */
+  --verde-900: #0B3D25;   /* texto forte / títulos */
+  --verde-700: #0E6B3B;   /* verde de marca — botões, cabeçalho, acentos */
+  --verde-600: #15824A;   /* hover do verde de marca */
+  --verde-500: #2E9960;   /* detalhes, ícones, etiquetas */
+  --verde-100: #E7F5ED;   /* fundo verde muito claro (secções alternadas) */
+  --verde-linha: #CDEADA; /* bordas/divisores em tom verde */
+
+  /* Neutros */
+  --branco:      #FFFFFF;
+  --texto:       #16281F; /* quase-preto esverdeado */
+  --texto-suave: #4C5D54;
+
+  /* Tipografia */
+  --fonte-titulo: 'Fraunces', Georgia, serif;
+  --fonte-corpo:  'Work Sans', -apple-system, sans-serif;
+
+  /* Espaçamento */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.75rem;
+  --espaco-lg: 3rem;
+  --espaco-xl: 5rem;
+
+  --raio: 10px;
+  --raio-pequeno: 6px;
+  --largura-max: 1180px;
+  --sombra: 0 10px 30px -14px rgba(11, 61, 37, 0.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--fonte-corpo);
+  background: var(--branco);
+  color: var(--texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco-md);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--verde-900);
+}
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid var(--verde-700);
+}
+
+.cabecalho .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.marca { display: flex; align-items: center; gap: 0.5rem; }
+
+.marca-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--verde-700);
+  letter-spacing: 0.01em;
+}
+
+.nav-principal { display: flex; gap: var(--espaco-lg); }
+
+.nav-principal a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--texto);
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-principal a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 100%; bottom: -2px;
+  height: 2px;
+  background: var(--verde-700);
+  transition: right 0.18s ease;
+}
+.nav-principal a:hover::after { right: 0; }
+.nav-principal a:hover { color: var(--verde-700); }
+
+.botao-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.botao-menu span {
+  width: 24px;
+  height: 2px;
+  background: var(--verde-700);
+  display: block;
+}
+
+/* =========================================================
+   HERO — bloco verde cheio, forte desde o primeiro segundo
+   ========================================================= */
+.hero {
+  background: var(--verde-700);
+  padding: var(--espaco-xl) 0;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--espaco-lg);
+  align-items: center;
+}
+
+.hero-texto .eyebrow {
+  color: #BFEAD1;
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: var(--espaco-xs);
+}
+
+.hero-texto h1 {
+  color: var(--branco);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  margin-bottom: var(--espaco-sm);
+  max-width: 14ch;
+}
+
+.hero-texto p {
+  color: #D9F0E3;
+  font-size: 1.05rem;
+  max-width: 44ch;
+  margin-bottom: var(--espaco-md);
+}
+
+.hero-acoes { display: flex; gap: var(--espaco-sm); flex-wrap: wrap; }
+
+.botao {
+  display: inline-block;
+  padding: 0.9rem 1.7rem;
+  border-radius: var(--raio-pequeno);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.botao-primario { background: var(--branco); color: var(--verde-700); }
+.botao-primario:hover { background: var(--verde-100); transform: translateY(-1px); }
+
+.botao-secundario { background: transparent; color: var(--branco); border-color: var(--branco); }
+.botao-secundario:hover { background: var(--branco); color: var(--verde-700); }
+
+.hero-visual {
+  aspect-ratio: 4 / 5;
+  background: var(--verde-600);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: var(--raio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  text-align: center;
+  padding: var(--espaco-md);
+}
+
+/* =========================================================
+   CATEGORIAS
+   ========================================================= */
+.seccao-categorias { padding: var(--espaco-lg) 0; background: var(--branco); }
+
+.seccao-categorias h2,
+.seccao-destaque h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--espaco-md);
+}
+
+.categorias-lista {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+.categorias-lista::-webkit-scrollbar { display: none; }
+
+.categoria-botao {
+  flex: 0 0 auto;
+  padding: 0.65rem 1.25rem;
+  border: 1.5px solid var(--verde-linha);
+  background: var(--branco);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--verde-700);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.categoria-botao.ativa,
+.categoria-botao:hover {
+  background: var(--verde-700);
+  color: var(--branco);
+  border-color: var(--verde-700);
+}
+
+/* =========================================================
+   PRODUTOS
+   ========================================================= */
+.seccao-destaque { padding: var(--espaco-lg) 0 var(--espaco-xl); background: var(--verde-100); }
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--espaco-md);
+}
+
+.cartao-produto {
+  background: var(--branco);
+  border: 1.5px solid var(--verde-linha);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+.cartao-produto:hover {
+  box-shadow: var(--sombra);
+  border-color: var(--verde-700);
+  transform: translateY(-3px);
+}
+
+.cartao-produto .imagem-produto {
+  background: var(--verde-100);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.cartao-produto .imagem-produto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartao-produto .conteudo {
+  padding: var(--espaco-sm) var(--espaco-sm) var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.cartao-produto .categoria-etiqueta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--verde-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cartao-produto h3 { font-size: 1.05rem; }
+
+.cartao-produto .descricao {
+  font-size: 0.87rem;
+  color: var(--texto-suave);
+  flex: 1;
+}
+
+.cartao-produto .preco {
+  font-family: var(--fonte-titulo);
+  color: var(--verde-700);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.cartao-produto .ver-mais {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--verde-700);
+  border: 1.5px solid var(--verde-700);
+  text-align: center;
+  padding: 0.55rem;
+  border-radius: var(--raio-pequeno);
+  cursor: pointer;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.cartao-produto .ver-mais:hover { background: var(--verde-700); color: var(--branco); }
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+.rodape { background: var(--verde-900); color: #CDE7D8; padding: var(--espaco-lg) 0 var(--espaco-md); }
+
+.rodape .container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: var(--espaco-md);
+}
+
+.rodape h3 { color: var(--branco); font-size: 1.1rem; margin-bottom: 0.6rem; }
+.rodape p, .rodape a { color: #A9CBB6; font-size: 0.9rem; }
+.rodape a:hover { color: var(--branco); }
+
+.rodape-baixo {
+  margin-top: var(--espaco-lg);
+  padding-top: var(--espaco-sm);
+  border-top: 1px solid rgba(255,255,255,0.14);
+  font-size: 0.8rem;
+  color: #7FA690;
+  text-align: center;
+}
+
+/* =========================================================
+   RESPONSIVO — MOBILE FIRST
+   ========================================================= */
+@media (max-width: 860px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; aspect-ratio: 16/9; }
+
+  .nav-principal {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    border-bottom: 2px solid var(--verde-700);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    padding: var(--espaco-sm) var(--espaco-md);
+  }
+  .nav-principal.aberto { display: flex; }
+  .nav-principal a { padding: 0.85rem 0; border-bottom: 1px solid var(--verde-linha); }
+  .nav-principal a:last-child { border-bottom: none; }
+
+  .botao-menu { display: flex; }
+
+  .rodape .container { grid-template-columns: 1fr; gap: var(--espaco-md); }
+}
+
+@media (max-width: 480px) {
+  .grade-produtos { grid-template-columns: 1fr 1fr; }
+  .hero-texto h1 { max-width: none; }
+}
+
+/* =========================================================
+   CABEÇALHO DE PÁGINA INTERNA (produtos / sobre / contactos)
+   ========================================================= */
+.cabecalho-pagina { padding: var(--espaco-xl) 0 var(--espaco-lg); background: var(--verde-700); }
+.cabecalho-pagina h1 { color: var(--branco); font-size: clamp(1.9rem, 3.5vw, 2.7rem); }
+.cabecalho-pagina p { color: #D9F0E3; max-width: 56ch; margin-top: 0.5rem; }
+
+.seccao-lista-produtos { padding: var(--espaco-lg) 0 var(--espaco-xl); background: var(--branco); }
+
+.resultado-vazio { color: var(--texto-suave); font-style: italic; padding: var(--espaco-lg) 0; }
+
+/* =========================================================
+   MODAL — DETALHES DO PRODUTO
+   ========================================================= */
+.modal-fundo {
+  position: fixed; inset: 0;
+  background: rgba(11, 61, 37, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--espaco-md);
+  z-index: 100;
+}
+.modal-fundo.aberto { display: flex; }
+
+.modal-caixa {
+  background: var(--branco);
+  border-radius: var(--raio);
+  max-width: 600px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: var(--espaco-sm); right: var(--espaco-sm);
+  background: var(--branco);
+  border: 1.5px solid var(--verde-linha);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--verde-700);
+  z-index: 2;
+}
+
+.modal-imagem { aspect-ratio: 3/4; background: var(--verde-100); overflow: hidden; }
+.modal-imagem img { width: 100%; height: 100%; object-fit: cover; }
+
+.modal-conteudo { padding: var(--espaco-md); }
+.modal-conteudo .categoria-etiqueta { font-size: 0.78rem; font-weight: 600; color: var(--verde-500); text-transform: uppercase; }
+.modal-conteudo h2 { font-size: 1.5rem; margin: 0.3rem 0; }
+.modal-conteudo .preco { font-family: var(--fonte-titulo); color: var(--verde-700); font-weight: 700; font-size: 1.3rem; margin-bottom: var(--espaco-sm); }
+
+.modal-ficha { border-top: 1.5px solid var(--verde-linha); margin-top: var(--espaco-sm); padding-top: var(--espaco-sm); display: grid; gap: 0.5rem; }
+.modal-ficha dt { font-size: 0.78rem; color: var(--verde-500); font-weight: 600; }
+.modal-ficha dd { color: var(--texto); margin-bottom: 0.4rem; }
+
+.modal-acoes { margin-top: var(--espaco-md); }
+.modal-acoes .botao-primario { background: var(--verde-700); color: var(--branco); border-color: var(--verde-700); }
+.modal-acoes .botao-primario:hover { background: var(--verde-600); }
+
+/* =========================================================
+   PÁGINAS SOBRE / CONTACTOS
+   ========================================================= */
+.seccao-texto { padding: var(--espaco-lg) 0; max-width: 68ch; }
+.seccao-texto p { margin-bottom: var(--espaco-sm); color: var(--texto-suave); }
+
+.grade-contacto { display: grid; grid-template-columns: 1fr 1fr; gap: var(--espaco-md); padding: var(--espaco-lg) 0 var(--espaco-xl); }
+
+.cartao-contacto { background: var(--verde-100); border: 1.5px solid var(--verde-linha); border-radius: var(--raio); padding: var(--espaco-md); }
+.cartao-contacto h3 { margin-bottom: 0.4rem; }
+.cartao-contacto p { color: var(--texto-suave); margin-bottom: var(--espaco-sm); }
+.cartao-contacto .botao-secundario { color: var(--verde-700); border-color: var(--verde-700); }
+.cartao-contacto .botao-secundario:hover { background: var(--verde-700); color: var(--branco); }
+.cartao-contacto .botao-primario { background: var(--verde-700); color: var(--branco); border-color: var(--verde-700); }
+.cartao-contacto .botao-primario:hover { background: var(--verde-600); transform: translateY(-1px); }
+
+@media (max-width: 700px) {
+  .grade-contacto { grid-template-columns: 1fr; }
+}
