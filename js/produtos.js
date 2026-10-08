@@ -2083,7 +2083,7 @@ const PRODUTOS = [
     nome: "Kit Desintoxicação",
     categoria: "kits",
     imagem: "../images/produtos/kit-desintoxicacao.jpg",
-    preco: "Preço sob consulta",
+   
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com a desintoxicação e bem-estar geral.",
     beneficios: "Conjunto de produtos destinado a complementar uma rotina de alimentação equilibrada e hábitos saudáveis.",
     indicadoPara: "Adultos interessados em complementar os seus cuidados de bem-estar.",
@@ -2099,7 +2099,7 @@ const PRODUTOS = [
     nome: "Kit Sistema Circulatório",
     categoria: "kits",
     imagem: "../images/produtos/kit-circulatorio.jpg",
-    preco: "Preço sob consulta",
+   
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com o sistema circulatório e bem-estar cardiovascular.",
     beneficios: "Conjunto de produtos destinado a complementar hábitos de vida saudáveis.",
     indicadoPara: "Adultos interessados em complementar os cuidados relacionados com o bem-estar circulatório.",
@@ -2115,7 +2115,7 @@ const PRODUTOS = [
     nome: "Kit Sistema Digestivo",
     categoria: "kits",
     imagem: "../images/produtos/kit-digestivo.jpg",
-    preco: "Preço sob consulta",
+  
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com o sistema digestivo.",
     beneficios: "Conjunto de produtos destinado a complementar hábitos alimentares e de bem-estar digestivo.",
     indicadoPara: "Adultos interessados em complementar os cuidados relacionados com o bem-estar digestivo.",
@@ -2131,7 +2131,7 @@ const PRODUTOS = [
     nome: "Kit Cancro",
     categoria: "kits",
     imagem: "../images/produtos/kit-cancro.jpg",
-    preco: "Preço sob consulta",
+  
     descricaoCompleta: "Kit de produtos comercializado na linha de cuidados e bem-estar relacionados com a saúde.",
     beneficios: "Conjunto de produtos destinado a complementar cuidados gerais de saúde e bem-estar.",
     indicadoPara: "Adultos. Este kit não substitui diagnóstico, tratamento ou acompanhamento médico de doenças oncológicas.",
@@ -2147,7 +2147,7 @@ const PRODUTOS = [
     nome: "Kit Emagrecimento",
     categoria: "kits",
     imagem: "../images/produtos/kit-emagrecimento.jpg",
-    preco: "Preço sob consulta",
+   
     descricaoCompleta: "Kit de produtos destinado a complementar uma rotina de controlo de peso e hábitos de vida saudáveis.",
     beneficios: "Complemento de uma rotina que inclua alimentação equilibrada e actividade física.",
     indicadoPara: "Adultos interessados em complementar uma rotina de controlo de peso.",
@@ -2163,7 +2163,7 @@ const PRODUTOS = [
     nome: "Kit Vista",
     categoria: "kits",
     imagem: "../images/produtos/kit-vista.jpg",
-    preco: "Preço sob consulta",
+  
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com o bem-estar ocular e a visão.",
     beneficios: "Conjunto de produtos destinado a complementar cuidados nutricionais relacionados com o bem-estar ocular.",
     indicadoPara: "Adultos interessados em complementar os cuidados nutricionais relacionados com a saúde ocular.",
@@ -2179,7 +2179,7 @@ const PRODUTOS = [
     nome: "Kit Cérebro",
     categoria: "kits",
     imagem: "../images/produtos/kit-cerebro.jpg",
-    preco: "Preço sob consulta",
+   
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com o bem-estar e suporte nutricional da função cognitiva.",
     beneficios: "Conjunto de produtos destinado a complementar hábitos de vida saudáveis e cuidados nutricionais.",
     indicadoPara: "Adultos interessados em complementar os cuidados nutricionais relacionados com o bem-estar cognitivo.",
@@ -2195,7 +2195,7 @@ const PRODUTOS = [
     nome: "Kit Parasitário",
     categoria: "kits",
     imagem: "../images/produtos/kit-parasitario.jpg",
-    preco: "Preço sob consulta",
+    
     descricaoCompleta: "Kit de produtos da linha de cuidados relacionados com o bem-estar digestivo e intestinal.",
     beneficios: "Conjunto de produtos destinado a complementar cuidados gerais de bem-estar digestivo.",
     indicadoPara: "Adultos interessados em produtos de bem-estar digestivo. Não substitui diagnóstico ou tratamento médico de infecções parasitárias.",
