@@ -1,30 +1,34 @@
 /* =========================================================
    ERVANÁRIA HANHANE — style.css
+
    Identidade: VERDE + BRANCO, forte e limpo.
-   - Verde vibrante como cor de marca (confiança, natureza, saúde)
+
+   - Verde vibrante como cor de marca
    - Branco puro como respiração / destaque dos produtos
-   - Serif com carácter nos títulos, sans-serif limpa no corpo
+   - Serif com carácter nos títulos
+   - Sans-serif limpa no corpo
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,0..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
 
 :root {
+
   /* Verdes */
-  --verde-900: #0B3D25;   /* texto forte / títulos */
-  --verde-700: #0E6B3B;   /* verde de marca — botões, cabeçalho, acentos */
-  --verde-600: #15824A;   /* hover do verde de marca */
-  --verde-500: #2E9960;   /* detalhes, ícones, etiquetas */
-  --verde-100: #E7F5ED;   /* fundo verde muito claro (secções alternadas) */
-  --verde-linha: #CDEADA; /* bordas/divisores em tom verde */
+  --verde-900: #0B3D25;
+  --verde-700: #0E6B3B;
+  --verde-600: #15824A;
+  --verde-500: #2E9960;
+  --verde-100: #E7F5ED;
+  --verde-linha: #CDEADA;
 
   /* Neutros */
-  --branco:      #FFFFFF;
-  --texto:       #16281F; /* quase-preto esverdeado */
+  --branco: #FFFFFF;
+  --texto: #16281F;
   --texto-suave: #4C5D54;
 
   /* Tipografia */
   --fonte-titulo: 'Fraunces', Georgia, serif;
-  --fonte-corpo:  'Work Sans', -apple-system, sans-serif;
+  --fonte-corpo: 'Work Sans', -apple-system, sans-serif;
 
   /* Espaçamento */
   --espaco-xs: 0.5rem;
@@ -36,12 +40,24 @@
   --raio: 10px;
   --raio-pequeno: 6px;
   --largura-max: 1180px;
+
   --sombra: 0 10px 30px -14px rgba(11, 61, 37, 0.25);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+/* =========================================================
+   BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--fonte-corpo);
@@ -51,9 +67,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .container {
   max-width: var(--largura-max);
@@ -61,16 +83,20 @@ a { color: inherit; text-decoration: none; }
   padding: 0 var(--espaco-md);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--fonte-titulo);
   font-weight: 700;
   line-height: 1.15;
   color: var(--verde-900);
 }
 
+
 /* =========================================================
    CABEÇALHO
    ========================================================= */
+
 .cabecalho {
   position: sticky;
   top: 0;
@@ -78,6 +104,9 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(6px);
   border-bottom: 2px solid var(--verde-700);
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
 }
 
 .cabecalho .container {
@@ -87,7 +116,14 @@ h1, h2, h3 {
   height: 76px;
 }
 
-.marca { display: flex; align-items: center; gap: 0.5rem; }
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
+}
 
 .marca-nome {
   font-family: var(--fonte-titulo);
@@ -97,7 +133,10 @@ h1, h2, h3 {
   letter-spacing: 0.01em;
 }
 
-.nav-principal { display: flex; gap: var(--espaco-lg); }
+.nav-principal {
+  display: flex;
+  gap: var(--espaco-lg);
+}
 
 .nav-principal a {
   font-size: 0.95rem;
@@ -110,13 +149,21 @@ h1, h2, h3 {
 .nav-principal a::after {
   content: "";
   position: absolute;
-  left: 0; right: 100%; bottom: -2px;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
   height: 2px;
   background: var(--verde-700);
   transition: right 0.18s ease;
 }
-.nav-principal a:hover::after { right: 0; }
-.nav-principal a:hover { color: var(--verde-700); }
+
+.nav-principal a:hover::after {
+  right: 0;
+}
+
+.nav-principal a:hover {
+  color: var(--verde-700);
+}
 
 .botao-menu {
   display: none;
@@ -135,9 +182,11 @@ h1, h2, h3 {
   display: block;
 }
 
+
 /* =========================================================
-   HERO — bloco verde cheio, forte desde o primeiro segundo
+   HERO
    ========================================================= */
+
 .hero {
   background: var(--verde-700);
   padding: var(--espaco-xl) 0;
@@ -156,6 +205,9 @@ h1, h2, h3 {
   font-weight: 600;
   font-size: 0.95rem;
   margin-bottom: var(--espaco-xs);
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
 }
 
 .hero-texto h1 {
@@ -163,6 +215,9 @@ h1, h2, h3 {
   font-size: clamp(2.2rem, 4vw, 3.4rem);
   margin-bottom: var(--espaco-sm);
   max-width: 14ch;
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
 }
 
 .hero-texto p {
@@ -170,46 +225,170 @@ h1, h2, h3 {
   font-size: 1.05rem;
   max-width: 44ch;
   margin-bottom: var(--espaco-md);
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
 }
 
-.hero-acoes { display: flex; gap: var(--espaco-sm); flex-wrap: wrap; }
+.hero-acoes {
+  display: flex;
+  gap: var(--espaco-sm);
+  flex-wrap: wrap;
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   BOTÕES / CTA
+   ========================================================= */
 
 .botao {
   display: inline-block;
+  position: relative;
+  overflow: hidden;
+
   padding: 0.9rem 1.7rem;
   border-radius: var(--raio-pequeno);
+
   font-size: 0.95rem;
   font-weight: 600;
+
   cursor: pointer;
   border: 1.5px solid transparent;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  will-change: transform;
 }
 
-.botao-primario { background: var(--branco); color: var(--verde-700); }
-.botao-primario:hover { background: var(--verde-100); transform: translateY(-1px); }
+/* Pequeno brilho interno dos CTA */
+.botao::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
 
-.botao-secundario { background: transparent; color: var(--branco); border-color: var(--branco); }
-.botao-secundario:hover { background: var(--branco); color: var(--verde-700); }
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+
+  pointer-events: none;
+}
+
+.botao:hover::after {
+  left: 140%;
+}
+
+
+/* CTA principal */
+
+.botao-primario {
+  background: var(--branco);
+  color: var(--verde-700);
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.botao-primario:hover {
+  background: var(--verde-100);
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+/* CTA secundário */
+
+.botao-secundario {
+  background: transparent;
+  color: var(--branco);
+  border-color: var(--branco);
+}
+
+.botao-secundario:hover {
+  background: var(--branco);
+  color: var(--verde-700);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Clique */
+.botao:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+
+/* =========================================================
+   HERO — IMAGEM
+   ========================================================= */
 
 .hero-visual {
   aspect-ratio: 4 / 5;
   background: var(--verde-600);
-  border: 1.5px solid rgba(255,255,255,0.35);
+
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--raio);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: var(--branco);
   font-family: var(--fonte-titulo);
   font-style: italic;
   text-align: center;
+
   padding: var(--espaco-md);
+
+  overflow: hidden;
+
+  /* Preparação para GSAP */
+  will-change: transform, opacity;
 }
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease;
+
+  will-change: transform;
+}
+
+.hero-visual:hover img {
+  transform: scale(1.025);
+}
+
 
 /* =========================================================
    CATEGORIAS
    ========================================================= */
-.seccao-categorias { padding: var(--espaco-lg) 0; background: var(--branco); }
+
+.seccao-categorias {
+  padding: var(--espaco-lg) 0;
+  background: var(--branco);
+}
 
 .seccao-categorias h2,
 .seccao-destaque h2 {
@@ -224,20 +403,34 @@ h1, h2, h3 {
   padding-bottom: 0.5rem;
   scrollbar-width: none;
 }
-.categorias-lista::-webkit-scrollbar { display: none; }
+
+.categorias-lista::-webkit-scrollbar {
+  display: none;
+}
 
 .categoria-botao {
   flex: 0 0 auto;
+
   padding: 0.65rem 1.25rem;
+
   border: 1.5px solid var(--verde-linha);
   background: var(--branco);
+
   border-radius: 999px;
+
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--verde-700);
+
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s ease;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .categoria-botao.ativa,
@@ -247,10 +440,20 @@ h1, h2, h3 {
   border-color: var(--verde-700);
 }
 
+.categoria-botao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(11, 61, 37, 0.12);
+}
+
+
 /* =========================================================
    PRODUTOS
    ========================================================= */
-.seccao-destaque { padding: var(--espaco-lg) 0 var(--espaco-xl); background: var(--verde-100); }
+
+.seccao-destaque {
+  padding: var(--espaco-lg) 0 var(--espaco-xl);
+  background: var(--verde-100);
+}
 
 .grade-produtos {
   display: grid;
@@ -263,15 +466,22 @@ h1, h2, h3 {
   border: 1.5px solid var(--verde-linha);
   border-radius: var(--raio);
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+
+  will-change: transform, opacity;
 }
 
 .cartao-produto:hover {
   box-shadow: var(--sombra);
   border-color: var(--verde-700);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 .cartao-produto .imagem-produto {
@@ -284,6 +494,12 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.cartao-produto:hover .imagem-produto img {
+  transform: scale(1.035);
 }
 
 .cartao-produto .conteudo {
@@ -302,7 +518,9 @@ h1, h2, h3 {
   letter-spacing: 0.04em;
 }
 
-.cartao-produto h3 { font-size: 1.05rem; }
+.cartao-produto h3 {
+  font-size: 1.05rem;
+}
 
 .cartao-produto .descricao {
   font-size: 0.87rem;
@@ -320,23 +538,45 @@ h1, h2, h3 {
 
 .cartao-produto .ver-mais {
   margin-top: 0.5rem;
+
   font-size: 0.85rem;
   font-weight: 600;
+
   color: var(--verde-700);
   border: 1.5px solid var(--verde-700);
+
   text-align: center;
   padding: 0.55rem;
+
   border-radius: var(--raio-pequeno);
+
   cursor: pointer;
   background: transparent;
-  transition: background 0.15s ease, color 0.15s ease;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.cartao-produto .ver-mais:hover { background: var(--verde-700); color: var(--branco); }
+
+.cartao-produto .ver-mais:hover {
+  background: var(--verde-700);
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(11, 61, 37, 0.12);
+}
+
 
 /* =========================================================
    RODAPÉ
    ========================================================= */
-.rodape { background: var(--verde-900); color: #CDE7D8; padding: var(--espaco-lg) 0 var(--espaco-md); }
+
+.rodape {
+  background: var(--verde-900);
+  color: #CDE7D8;
+  padding: var(--espaco-lg) 0 var(--espaco-md);
+}
 
 .rodape .container {
   display: grid;
@@ -344,133 +584,622 @@ h1, h2, h3 {
   gap: var(--espaco-md);
 }
 
-.rodape h3 { color: var(--branco); font-size: 1.1rem; margin-bottom: 0.6rem; }
-.rodape p, .rodape a { color: #A9CBB6; font-size: 0.9rem; }
-.rodape a:hover { color: var(--branco); }
+.rodape h3 {
+  color: var(--branco);
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.rodape p,
+.rodape a {
+  color: #A9CBB6;
+  font-size: 0.9rem;
+}
+
+.rodape a {
+  transition: color 0.2s ease;
+}
+
+.rodape a:hover {
+  color: var(--branco);
+}
 
 .rodape-baixo {
   margin-top: var(--espaco-lg);
   padding-top: var(--espaco-sm);
-  border-top: 1px solid rgba(255,255,255,0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+
   font-size: 0.8rem;
   color: #7FA690;
   text-align: center;
 }
 
-/* =========================================================
-   RESPONSIVO — MOBILE FIRST
-   ========================================================= */
-@media (max-width: 860px) {
-  .hero .container { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; aspect-ratio: 16/9; }
-
-  .nav-principal {
-    position: absolute;
-    top: 76px;
-    left: 0;
-    right: 0;
-    background: var(--branco);
-    border-bottom: 2px solid var(--verde-700);
-    flex-direction: column;
-    gap: 0;
-    display: none;
-    padding: var(--espaco-sm) var(--espaco-md);
-  }
-  .nav-principal.aberto { display: flex; }
-  .nav-principal a { padding: 0.85rem 0; border-bottom: 1px solid var(--verde-linha); }
-  .nav-principal a:last-child { border-bottom: none; }
-
-  .botao-menu { display: flex; }
-
-  .rodape .container { grid-template-columns: 1fr; gap: var(--espaco-md); }
-}
-
-@media (max-width: 480px) {
-  .grade-produtos { grid-template-columns: 1fr 1fr; }
-  .hero-texto h1 { max-width: none; }
-}
 
 /* =========================================================
-   CABEÇALHO DE PÁGINA INTERNA (produtos / sobre / contactos)
+   CABEÇALHO DE PÁGINA INTERNA
    ========================================================= */
-.cabecalho-pagina { padding: var(--espaco-xl) 0 var(--espaco-lg); background: var(--verde-700); }
-.cabecalho-pagina h1 { color: var(--branco); font-size: clamp(1.9rem, 3.5vw, 2.7rem); }
-.cabecalho-pagina p { color: #D9F0E3; max-width: 56ch; margin-top: 0.5rem; }
 
-.seccao-lista-produtos { padding: var(--espaco-lg) 0 var(--espaco-xl); background: var(--branco); }
+.cabecalho-pagina {
+  padding: var(--espaco-xl) 0 var(--espaco-lg);
+  background: var(--verde-700);
+}
 
-.resultado-vazio { color: var(--texto-suave); font-style: italic; padding: var(--espaco-lg) 0; }
+.cabecalho-pagina h1 {
+  color: var(--branco);
+  font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+}
+
+.cabecalho-pagina p {
+  color: #D9F0E3;
+  max-width: 56ch;
+  margin-top: 0.5rem;
+}
+
+.seccao-lista-produtos {
+  padding: var(--espaco-lg) 0 var(--espaco-xl);
+  background: var(--branco);
+}
+
+.resultado-vazio {
+  color: var(--texto-suave);
+  font-style: italic;
+  padding: var(--espaco-lg) 0;
+}
+
 
 /* =========================================================
    MODAL — DETALHES DO PRODUTO
    ========================================================= */
+
 .modal-fundo {
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
+
   background: rgba(11, 61, 37, 0.55);
+
   display: none;
   align-items: center;
   justify-content: center;
+
   padding: var(--espaco-md);
+
   z-index: 100;
 }
-.modal-fundo.aberto { display: flex; }
+
+.modal-fundo.aberto {
+  display: flex;
+}
 
 .modal-caixa {
   background: var(--branco);
+
   border-radius: var(--raio);
+
   max-width: 600px;
   width: 100%;
+
   max-height: 88vh;
   overflow-y: auto;
+
   position: relative;
 }
 
 .modal-fechar {
   position: absolute;
-  top: var(--espaco-sm); right: var(--espaco-sm);
+  top: var(--espaco-sm);
+  right: var(--espaco-sm);
+
   background: var(--branco);
   border: 1.5px solid var(--verde-linha);
+
   border-radius: 50%;
-  width: 36px; height: 36px;
+
+  width: 36px;
+  height: 36px;
+
   cursor: pointer;
+
   font-size: 1.1rem;
   line-height: 1;
+
   color: var(--verde-700);
+
   z-index: 2;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.modal-imagem { aspect-ratio: 3/4; background: var(--verde-100); overflow: hidden; }
-.modal-imagem img { width: 100%; height: 100%; object-fit: cover; }
+.modal-fechar:hover {
+  background: var(--verde-700);
+  color: var(--branco);
+  transform: rotate(90deg);
+}
 
-.modal-conteudo { padding: var(--espaco-md); }
-.modal-conteudo .categoria-etiqueta { font-size: 0.78rem; font-weight: 600; color: var(--verde-500); text-transform: uppercase; }
-.modal-conteudo h2 { font-size: 1.5rem; margin: 0.3rem 0; }
-.modal-conteudo .preco { font-family: var(--fonte-titulo); color: var(--verde-700); font-weight: 700; font-size: 1.3rem; margin-bottom: var(--espaco-sm); }
+.modal-imagem {
+  aspect-ratio: 3/4;
+  background: var(--verde-100);
+  overflow: hidden;
+}
 
-.modal-ficha { border-top: 1.5px solid var(--verde-linha); margin-top: var(--espaco-sm); padding-top: var(--espaco-sm); display: grid; gap: 0.5rem; }
-.modal-ficha dt { font-size: 0.78rem; color: var(--verde-500); font-weight: 600; }
-.modal-ficha dd { color: var(--texto); margin-bottom: 0.4rem; }
+.modal-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.modal-acoes { margin-top: var(--espaco-md); }
-.modal-acoes .botao-primario { background: var(--verde-700); color: var(--branco); border-color: var(--verde-700); }
-.modal-acoes .botao-primario:hover { background: var(--verde-600); }
+.modal-conteudo {
+  padding: var(--espaco-md);
+}
+
+.modal-conteudo .categoria-etiqueta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--verde-500);
+  text-transform: uppercase;
+}
+
+.modal-conteudo h2 {
+  font-size: 1.5rem;
+  margin: 0.3rem 0;
+}
+
+.modal-conteudo .preco {
+  font-family: var(--fonte-titulo);
+  color: var(--verde-700);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: var(--espaco-sm);
+}
+
+.modal-ficha {
+  border-top: 1.5px solid var(--verde-linha);
+  margin-top: var(--espaco-sm);
+  padding-top: var(--espaco-sm);
+
+  display: grid;
+  gap: 0.5rem;
+}
+
+.modal-ficha dt {
+  font-size: 0.78rem;
+  color: var(--verde-500);
+  font-weight: 600;
+}
+
+.modal-ficha dd {
+  color: var(--texto);
+  margin-bottom: 0.4rem;
+}
+
+.modal-acoes {
+  margin-top: var(--espaco-md);
+}
+
+.modal-acoes .botao-primario {
+  background: var(--verde-700);
+  color: var(--branco);
+  border-color: var(--verde-700);
+}
+
+.modal-acoes .botao-primario:hover {
+  background: var(--verde-600);
+}
+
 
 /* =========================================================
    PÁGINAS SOBRE / CONTACTOS
    ========================================================= */
-.seccao-texto { padding: var(--espaco-lg) 0; max-width: 68ch; }
-.seccao-texto p { margin-bottom: var(--espaco-sm); color: var(--texto-suave); }
 
-.grade-contacto { display: grid; grid-template-columns: 1fr 1fr; gap: var(--espaco-md); padding: var(--espaco-lg) 0 var(--espaco-xl); }
+.seccao-texto {
+  padding: var(--espaco-lg) 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-.cartao-contacto { background: var(--verde-100); border: 1.5px solid var(--verde-linha); border-radius: var(--raio); padding: var(--espaco-md); }
-.cartao-contacto h3 { margin-bottom: 0.4rem; }
-.cartao-contacto p { color: var(--texto-suave); margin-bottom: var(--espaco-sm); }
-.cartao-contacto .botao-secundario { color: var(--verde-700); border-color: var(--verde-700); }
-.cartao-contacto .botao-secundario:hover { background: var(--verde-700); color: var(--branco); }
-.cartao-contacto .botao-primario { background: var(--verde-700); color: var(--branco); border-color: var(--verde-700); }
-.cartao-contacto .botao-primario:hover { background: var(--verde-600); transform: translateY(-1px); }
+.seccao-texto p {
+  margin-bottom: var(--espaco-md);
+  color: var(--texto-suave);
+  line-height: 1.8;
+}
+
+.grade-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-md);
+  padding: var(--espaco-lg) 0 var(--espaco-xl);
+}
+
+.cartao-contacto {
+  background: var(--verde-100);
+  border: 1.5px solid var(--verde-linha);
+  border-radius: var(--raio);
+  padding: var(--espaco-md);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cartao-contacto:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.cartao-contacto h3 {
+  margin-bottom: 0.4rem;
+}
+
+.cartao-contacto p {
+  color: var(--texto-suave);
+  margin-bottom: var(--espaco-sm);
+}
+
+.cartao-contacto .botao-secundario {
+  color: var(--verde-700);
+  border-color: var(--verde-700);
+}
+
+.cartao-contacto .botao-secundario:hover {
+  background: var(--verde-700);
+  color: var(--branco);
+}
+
+.cartao-contacto .botao-primario {
+  background: var(--verde-700);
+  color: var(--branco);
+  border-color: var(--verde-700);
+}
+
+.cartao-contacto .botao-primario:hover {
+  background: var(--verde-600);
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   IMAGENS DOS KITS
+   ========================================================= */
+
+.imagem-kit {
+  aspect-ratio: 16 / 9 !important;
+  background: #fff !important;
+  overflow: hidden;
+}
+
+.imagem-kit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+.modal-imagem-kit {
+  aspect-ratio: 16 / 9 !important;
+  background: #fff !important;
+  overflow: hidden;
+}
+
+.modal-imagem-kit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+}
+
+
+/* =========================================================
+   PREPARAÇÃO PARA GSAP
+   ========================================================= */
+
+/* Elementos que serão animados pelo GSAP */
+[data-gsap] {
+  will-change: transform, opacity;
+}
+
+/* CTA */
+[data-gsap="cta"] {
+  will-change: transform, opacity;
+}
+
+/* Imagem principal */
+[data-gsap="hero-image"] {
+  will-change: transform, opacity;
+}
+
+/* Cartões que poderão receber animação de entrada */
+.cartao-produto {
+  will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE — REDUZIR ANIMAÇÕES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO — MOBILE
+   ========================================================= */
+
+@media (max-width: 860px) {
+
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+    aspect-ratio: 16/9;
+  }
+
+  .nav-principal {
+    position: absolute;
+
+    top: 76px;
+    left: 0;
+    right: 0;
+
+    background: var(--branco);
+
+    border-bottom: 2px solid var(--verde-700);
+
+    flex-direction: column;
+    gap: 0;
+
+    display: none;
+
+    padding: var(--espaco-sm) var(--espaco-md);
+  }
+
+  .nav-principal.aberto {
+    display: flex;
+  }
+
+  .nav-principal a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--verde-linha);
+  }
+
+  .nav-principal a:last-child {
+    border-bottom: none;
+  }
+
+  .botao-menu {
+    display: flex;
+  }
+
+  .rodape .container {
+    grid-template-columns: 1fr;
+    gap: var(--espaco-md);
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .grade-produtos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-texto h1 {
+    max-width: none;
+  }
+
+  .hero-acoes {
+    width: 100%;
+  }
+
+  .hero-acoes .botao {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   CONTACTOS
+   ========================================================= */
 
 @media (max-width: 700px) {
-  .grade-contacto { grid-template-columns: 1fr; }
+
+  .grade-contacto {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .seccao-texto {
+    width: 100%;
+    max-width: 100%;
+    padding: 2.5rem 2rem;
+    margin: 0 auto;
+  }
+
+  .seccao-texto p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+}
+/* =========================================================
+   BARRA DE PESQUISA BOOTSTRAP
+   ========================================================= */
+
+.pesquisa-bootstrap {
+  width: 100%;
+  transition: all 0.25s ease;
+}
+
+.pesquisa-bootstrap:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================================
+   ÍCONE DE PESQUISA
+   ========================================================= */
+
+.pesquisa-bootstrap .input-group-text {
+  color: var(--verde-700, #087443);
+  background-color: #ffffff;
+  padding-left: 1.2rem;
+  padding-right: 0.5rem;
+  border-color: #dee2e6;
+}
+
+
+/* =========================================================
+   CAMPO DE TEXTO
+   ========================================================= */
+
+.pesquisa-bootstrap .form-control {
+  box-shadow: none !important;
+  font-size: 1rem;
+  border-color: #dee2e6;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.pesquisa-bootstrap .form-control:focus {
+  border-color: #dee2e6;
+  box-shadow: none !important;
+}
+
+.pesquisa-bootstrap .form-control::placeholder {
+  color: #888888;
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BOTÃO DE PESQUISA
+   ========================================================= */
+
+.pesquisa-bootstrap .btn-success {
+  background-color: var(--verde-700, #087443);
+  border-color: var(--verde-700, #087443);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.pesquisa-bootstrap .btn-success:hover {
+  background-color: #075f37;
+  border-color: #075f37;
+  color: #ffffff;
+}
+
+.pesquisa-bootstrap .btn-success:focus {
+  background-color: var(--verde-700, #087443);
+  border-color: var(--verde-700, #087443);
+  box-shadow: none;
+}
+
+.pesquisa-bootstrap .btn-success:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================================================
+   ÍCONE DENTRO DO BOTÃO
+   ========================================================= */
+
+.pesquisa-bootstrap .bi-search {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TRANSIÇÃO DOS ELEMENTOS
+   ========================================================= */
+
+.pesquisa-bootstrap .input-group-text,
+.pesquisa-bootstrap .form-control,
+.pesquisa-bootstrap .btn-success {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   TELEMÓVEIS
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+  .pesquisa-bootstrap {
+    width: 100%;
+  }
+
+  .pesquisa-bootstrap .form-control {
+    font-size: 0.95rem;
+  }
+
+  .pesquisa-bootstrap .form-control::placeholder {
+    font-size: 0.88rem;
+  }
+
+  .pesquisa-bootstrap .input-group-text {
+    padding-left: 0.9rem;
+    padding-right: 0.4rem;
+  }
+
+  .pesquisa-bootstrap .btn-success {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+}
+
+
+/* =========================================================
+   ECRÃS MUITO PEQUENOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .pesquisa-bootstrap .form-control {
+    font-size: 0.9rem;
+  }
+
+  .pesquisa-bootstrap .form-control::placeholder {
+    font-size: 0.82rem;
+  }
+
+  .pesquisa-bootstrap .input-group-text {
+    padding-left: 0.7rem;
+    padding-right: 0.3rem;
+  }
+
+  .pesquisa-bootstrap .btn-success {
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+  }
+
 }

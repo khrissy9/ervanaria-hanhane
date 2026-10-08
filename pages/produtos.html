@@ -1,95 +1,397 @@
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
+
+  <!-- BOOTSTRAP -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- BOOTSTRAP ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Suplementos — Ervanária Hanhane</title>
-  <meta name="description" content="Todos os suplementos naturais da Ervanária Hanhane, organizados por categoria.">
+
+  <meta
+    name="description"
+    content="Todos os suplementos naturais da Ervanária Hanhane, organizados por categoria."
+  >
+
   <link rel="stylesheet" href="../css/style.css">
+
 </head>
+
 <body>
 
+
   <!-- CABEÇALHO -->
-  <header class="cabecalho">
+  <header class="cabecalho" data-gsap="header">
+
     <div class="container">
-      <a href="../index.html" class="marca">
-        <img src="../images/logo/logo-real.jpg" alt="Ervanária Hanhane" style="height:40px;">
-        <span class="marca-nome">Ervanária Hanhane</span>
+
+      <a
+        href="../index.html"
+        class="marca"
+        data-gsap="marca"
+      >
+
+        <img
+          src="../images/logo/logo-real.jpg"
+          alt="Ervanária Hanhane"
+          style="height:40px;"
+        >
+
+        <span class="marca-nome">
+          Ervanária Hanhane
+        </span>
+
       </a>
 
-      <nav class="nav-principal" id="navPrincipal">
-        <a href="../index.html">Início</a>
-        <a href="produtos.html">Suplementos</a>
-        <a href="sobre.html">Sobre Nós</a>
-        <a href="contactos.html">Contactos</a>
+
+      <nav
+        class="nav-principal"
+        id="navPrincipal"
+      >
+
+        <a href="../index.html">
+          Início
+        </a>
+
+        <a href="produtos.html">
+          Suplementos
+        </a>
+
+        <a href="sobre.html">
+          Sobre Nós
+        </a>
+
+        <a href="contactos.html">
+          Contactos
+        </a>
+
       </nav>
 
-      <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+
+      <button
+        class="botao-menu"
+        id="botaoMenu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
       </button>
+
     </div>
+
   </header>
 
+
   <!-- CABEÇALHO DE PÁGINA -->
-  <section class="cabecalho-pagina">
+  <section
+    class="cabecalho-pagina"
+    data-gsap="page-header"
+  >
+
     <div class="container">
-      <h1>Os nossos suplementos</h1>
-      <p>Explora por categoria ou vê tudo o que a Ervanária Hanhane tem para oferecer.</p>
-    </div>
-  </section>
 
-  <!-- FILTROS + GRELHA -->
-  <section class="seccao-lista-produtos">
-    <div class="container">
-      <div class="categorias-lista" id="listaFiltros">
-        <!-- preenchido via JavaScript (pagina-produtos.js) -->
-      </div>
+      <h1 data-gsap="page-title">
+        Os nossos suplementos
+      </h1>
 
-      <div class="grade-produtos" id="grelhaProdutos" style="margin-top: var(--espaco-md);">
-        <!-- preenchido via JavaScript (pagina-produtos.js) -->
-      </div>
-
-      <p class="resultado-vazio" id="resultadoVazio" style="display:none;">
-        Ainda não há suplementos nesta categoria. Volta em breve!
+      <p data-gsap="page-description">
+        Explora por categoria ou vê tudo o que a Ervanária Hanhane
+        tem para oferecer.
       </p>
+
+
+      <!-- CTA DA PÁGINA -->
+      <div
+        class="hero-acoes"
+        data-gsap="page-actions"
+      >
+
+        <a
+          href="produtos.html?categoria=kits"
+          class="botao botao-primario"
+          data-gsap="cta"
+        >
+          Ver Kits de Saúde
+        </a>
+
+        <a
+          href="contactos.html"
+          class="botao botao-secundario"
+          data-gsap="cta"
+        >
+          Falar connosco
+        </a>
+
+      </div>
+
     </div>
+
   </section>
+
+
+  <!-- FILTROS + PESQUISA + GRELHA -->
+  <section
+    class="seccao-lista-produtos"
+    data-gsap="products-section"
+  >
+
+    <div class="container">
+
+
+      <!-- PESQUISA -->
+      <div
+        class="pesquisa-produtos"
+        data-gsap="search"
+      >
+
+        <div class="row justify-content-center">
+
+          <div class="col-12 col-md-8 col-lg-6">
+
+            <div
+              class="input-group input-group-lg shadow-sm pesquisa-bootstrap"
+            >
+
+              <span
+                class="input-group-text bg-white border-end-0 rounded-start-pill"
+              >
+
+                <i class="bi bi-search"></i>
+
+              </span>
+
+
+              <input
+                type="search"
+                id="campoPesquisa"
+                class="form-control border-start-0 border-end-0"
+                placeholder="O que procura? Ex.: energia, vitaminas..."
+                aria-label="Pesquisar suplementos"
+                autocomplete="off"
+              >
+
+
+              <button
+                class="btn btn-success px-4 rounded-end-pill"
+                type="button"
+                id="botaoPesquisa"
+                aria-label="Pesquisar"
+              >
+
+                <i class="bi bi-search"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- CATEGORIAS -->
+      <div
+        class="categorias-lista"
+        id="listaFiltros"
+        data-gsap="categories"
+      >
+        <!-- preenchido via JavaScript (pagina-produtos.js) -->
+      </div>
+
+
+      <!-- GRELHA DE PRODUTOS -->
+      <div
+        class="grade-produtos"
+        id="grelhaProdutos"
+        style="margin-top: var(--espaco-md);"
+        data-gsap="products-grid"
+      >
+        <!-- preenchido via JavaScript (pagina-produtos.js) -->
+      </div>
+
+
+      <!-- RESULTADO VAZIO -->
+      <p
+        class="resultado-vazio"
+        id="resultadoVazio"
+        style="display:none;"
+      >
+
+        Ainda não há suplementos nesta categoria.
+        Volta em breve!
+
+      </p>
+
+    </div>
+
+  </section>
+
 
   <!-- RODAPÉ -->
-  <footer class="rodape">
+  <footer
+    class="rodape"
+    data-gsap="footer"
+  >
+
     <div class="container">
-      <div>
-        <h3>Ervanária Hanhane</h3>
-        <p>Suplementos naturais com origem e composição verificadas, para toda a família.</p>
+
+
+      <div data-gsap="footer-item">
+
+        <h3>
+          Ervanária Hanhane
+        </h3>
+
+        <p>
+          Suplementos naturais com origem e composição verificadas,
+          para toda a família.
+        </p>
+
       </div>
-      <div>
-        <h3>Navegação</h3>
-        <p><a href="produtos.html">Suplementos</a></p>
-        <p><a href="sobre.html">Sobre Nós</a></p>
-        <p><a href="contactos.html">Contactos</a></p>
+
+
+      <div data-gsap="footer-item">
+
+        <h3>
+          Navegação
+        </h3>
+
+        <p>
+          <a href="produtos.html">
+            Suplementos
+          </a>
+        </p>
+
+        <p>
+          <a href="sobre.html">
+            Sobre Nós
+          </a>
+        </p>
+
+        <p>
+          <a href="contactos.html">
+            Contactos
+          </a>
+        </p>
+
       </div>
-      <div>
-        <h3>Contacto</h3>
-        <p><a href="#" id="linkInstagram">Instagram</a></p>
-        <p><a href="#" id="linkWhatsapp">WhatsApp</a></p>
+
+
+      <div data-gsap="footer-item">
+
+        <h3>
+          Contacto
+        </h3>
+
+        <p>
+
+          <a
+            href="#"
+            id="linkInstagram"
+          >
+            Instagram
+          </a>
+
+        </p>
+
+        <p>
+
+          <a
+            href="#"
+            id="linkWhatsapp"
+          >
+            WhatsApp
+          </a>
+
+        </p>
+
       </div>
+
     </div>
+
+
     <div class="rodape-baixo">
-      &copy; <span id="anoAtual"></span> Ervanária Hanhane. Todos os direitos reservados.
+
+      &copy;
+
+      <span id="anoAtual"></span>
+
+      Ervanária Hanhane.
+      Todos os direitos reservados.
+
     </div>
+
   </footer>
 
+
   <!-- MODAL DE DETALHES DO PRODUTO -->
-  <div class="modal-fundo" id="modalFundo">
+  <div
+    class="modal-fundo"
+    id="modalFundo"
+  >
+
     <div class="modal-caixa">
-      <button class="modal-fechar" id="modalFechar" aria-label="Fechar">&times;</button>
-      <div id="modalCorpo"><!-- preenchido via JavaScript --></div>
+
+      <button
+        class="modal-fechar"
+        id="modalFechar"
+        aria-label="Fechar"
+      >
+        &times;
+      </button>
+
+      <div id="modalCorpo">
+        <!-- preenchido via JavaScript -->
+      </div>
+
     </div>
+
   </div>
 
+
+  <!-- CONFIGURAÇÃO -->
   <script src="../js/config.js"></script>
+
+
+  <!-- PRODUTOS -->
   <script src="../js/produtos.js"></script>
+
+
+  <!-- GSAP -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js">
+  </script>
+
+
+  <!-- GSAP SCROLLTRIGGER -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js">
+  </script>
+
+
+  <!-- APLICAÇÃO PRINCIPAL -->
   <script src="../js/app.js"></script>
+
+
+  <!-- LÓGICA ESPECÍFICA DA PÁGINA DE PRODUTOS -->
   <script src="../js/pagina-produtos.js"></script>
+
 </body>
 </html>
