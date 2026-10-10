@@ -1212,17 +1212,38 @@ function activarInteraccoesCartoes() {
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-
   desenharCategorias();
-
   desenharDestaques();
-
   definirAno();
-
   definirLinksContacto();
 
-  iniciarAnimacoesGSAP();
+  const intro = document.getElementById("introMobile");
+  const eMobile = window.matchMedia("(max-width: 860px)").matches;
 
-  activarInteraccoesCartoes();
-    activarInteraccoesToqueMobile();
+  function iniciarEfeitosDaPagina() {
+    iniciarAnimacoesGSAP();
+    activarInteraccoesCartoes();
+
+    if (typeof activarInteraccoesToqueMobile === "function") {
+      activarInteraccoesToqueMobile();
+    }
+  }
+
+  if (intro && eMobile) {
+    document.body.style.overflow = "hidden";
+
+    window.setTimeout(() => {
+      intro.classList.add("intro-a-sair");
+
+      window.setTimeout(() => {
+        intro.remove();
+        document.body.style.overflow = "";
+        iniciarEfeitosDaPagina();
+      }, 700);
+    }, 2000);
+  } else {
+    if (intro) intro.remove();
+    iniciarEfeitosDaPagina();
+  }
 });
+

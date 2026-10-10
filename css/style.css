@@ -1203,3 +1203,84 @@ h3 {
   }
 
 }
+
+/* ABERTURA DE BOAS-VINDAS PARA TELEMÓVEIS */
+.intro-mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .intro-mobile {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #f7faf6;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+  }
+
+  .intro-mobile.intro-a-sair {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .intro-mobile-conteudo {
+    width: 100%;
+    text-align: center;
+    animation: entradaIntroHanhane 0.9s ease both;
+  }
+
+  .intro-mobile-conteudo img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin: 0 auto 26px;
+    border-radius: 12px;
+  }
+
+  .intro-mobile-conteudo p {
+    margin: 0 0 8px;
+    color: #47734b;
+    font-size: 1rem;
+  }
+
+  .intro-mobile-conteudo h1 {
+    margin: 0 0 12px;
+    color: #245c35;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .intro-mobile-conteudo span {
+    color: #555;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+  }
+}
+
+@keyframes entradaIntroHanhane {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-mobile,
+  .intro-mobile-conteudo {
+    animation: none;
+    transition: none;
+  }
+}
