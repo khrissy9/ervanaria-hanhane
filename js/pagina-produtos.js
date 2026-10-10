@@ -183,6 +183,52 @@ function normalizarTexto(texto) {
 
 
 const SINONIMOS_PESQUISA = {
+  
+  sono: [
+    "sono",
+    "dormir",
+    "dificuldade em dormir",
+    "descanso",
+    "insónia",
+    "insonia"
+  ],
+
+  stress: [
+    "stress",
+    "estresse",
+    "nervosismo",
+    "tensão",
+    "tensao",
+    "relaxamento"
+  ],
+
+  concentracao: [
+    "concentração",
+    "concentracao",
+    "memória",
+    "memoria",
+    "foco",
+    "atenção",
+    "atencao"
+  ],
+
+  cabelo: [
+    "cabelo",
+    "queda de cabelo",
+    "fortalecer o cabelo"
+  ],
+
+  cansaco: [
+    "cansado",
+    "cansada",
+    "cansaço",
+    "cansaco",
+    "falta de energia",
+    "sem energia",
+    "fraqueza",
+    "fadiga"
+  ],
+
 
   energia: [
 
