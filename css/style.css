@@ -1284,3 +1284,145 @@ h3 {
     transition: none;
   }
 }
+
+/* Assinatura abaixo da fotografia no hero */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-visual .assinatura-lucinda {
+  margin: 14px 0 0;
+  color: #245c35;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-style: italic;
+  text-align: center;
+  transform: rotate(-3deg);
+}
+
+/* ==================================================
+   HERO MOBILE - ERVANÁRIA HANHANE
+   ================================================== */
+
+@media (max-width: 860px) {
+
+  .hero {
+    padding: 36px 0 44px;
+    overflow: hidden;
+  }
+
+  .hero > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-texto {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .hero-texto .eyebrow {
+    color: #267747;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .hero-texto h1 {
+    color: #205c38;
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+    line-height: 1.2;
+    margin: 0 0 18px;
+    overflow-wrap: break-word;
+  }
+
+  .hero-texto > p:not(.eyebrow) {
+    color: #46554a;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0 0 22px;
+  }
+
+  .hero-acoes {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hero-acoes .botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: auto;
+    gap: 0;
+  }
+
+  .hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(28, 83, 49, 0.12);
+  }
+
+  .hero-visual .assinatura-lucinda {
+    margin: 16px 0 0;
+    color: #24663d;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 1.8rem;
+    font-style: italic;
+    text-align: center;
+    transform: rotate(-3deg);
+  }
+}
+
+/* Telemóveis pequenos */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 28px;
+  }
+
+  .hero > .container {
+    padding-right: 18px;
+    padding-left: 18px;
+    gap: 24px;
+  }
+
+  .hero-texto h1 {
+    font-size: 1.85rem;
+  }
+
+  .hero-texto > p:not(.eyebrow) {
+    font-size: 0.96rem;
+  }
+}
