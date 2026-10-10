@@ -941,13 +941,24 @@ h3 {
 
 @media (max-width: 860px) {
 
-  .hero .container {
-    grid-template-columns: 1fr;
+  .hero > .container {
+    display: flex;
+    flex-direction: column;
+    
   }
-
+  .hero-texto{
+    order:0;
+  }
   .hero-visual {
-    order: -1;
+    order: 1;
     aspect-ratio: 4/5;
+    width: 100%;
+  }
+  .hero-visual img{
+    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .nav-principal {
